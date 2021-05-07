@@ -88,6 +88,33 @@ export const GameForm = () => {
                     />
                 </div>
             </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="maker">Maker: </label>
+                    <input type="text" name="maker" required autoFocus className="form-control"
+                        value={currentGame.maker}
+                        onChange={changeGameMakerState}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="numberOfPlayers">Number of Players: </label>
+                    <input type="text" name="numberOfPlayers" required autoFocus className="form-control"
+                        value={currentGame.numberOfPlayers}
+                        onChange={changeGamePlayersState}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="skillLevel">Skill Level: </label>
+                    <input type="text" name="skillLevel" required autoFocus className="form-control"
+                        value={currentGame.skillLevel}
+                        onChange={changeGameSkillLevelState}
+                    />
+                </div>
+            </fieldset>
 
             {/* You create the rest of the input fields for each game property */}
 
