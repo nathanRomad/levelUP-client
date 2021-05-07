@@ -5,13 +5,16 @@ export const GameList = (props) => {
     const { games, getGames } = useContext(GameContext)
     // console.log('games: ', games);
 
-    
+
     useEffect(() => {
         getGames()
     }, [])
 
     return (
         <article className="games">
+            <header className="games__header">
+                <h1>Level Up Games</h1>
+            </header>
             {
                 games.map(game => {
                     return <section key={`game--${game.id}`} className="game">

@@ -3,7 +3,7 @@ import { EventContext } from "./EventProvider.js"
 
 export const EventList = (props) => {
     const { events, getEvents } = useContext(EventContext)
-    console.log('events: ', events);
+    // console.log('events: ', events);
 
     useEffect(() => {
         getEvents()
