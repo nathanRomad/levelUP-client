@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react"
 import { GameContext } from "./GameProvider.js"
 import { useHistory } from 'react-router-dom'
 
-
 export const GameForm = () => {
     const history = useHistory()
     const { createGame, getGameTypes, gameTypes } = useContext(GameContext)
@@ -129,7 +128,7 @@ export const GameForm = () => {
                         {
                             gameTypes.map(gameType => {
                                 console.log('gameType: ', gameType);
-                                return <option key={gameType.id} value={gameType.id}>{gameType.type} </option> 
+                                return <option key={gameType.id} value={gameType.id}>{gameType.type} </option>
                             })
                         }
                     </select>
