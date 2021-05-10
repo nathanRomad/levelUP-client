@@ -31,18 +31,6 @@ export const EventList = (props) => {
                         <div>
                             {event.datetime}
                         </div>
-                        {/* <div>
-                            {
-                                new Date(event.date).toLocaleDateString("en-US",
-                                    {
-                                        weekday: 'long',
-                                        year: 'numeric',
-                                        month: 'long',
-                                        day: 'numeric'
-                                    })
-                            }
-                            @ {event.time}
-                        </div> */}
                         <button className="btn btn-2"
                             onClick={() => joinEvent(event.id)}
                         >Join</button>
