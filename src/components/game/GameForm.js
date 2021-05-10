@@ -103,7 +103,7 @@ export const GameForm = () => {
                         value={currentGame.numberOfPlayers}
                         onChange={changeGamePlayersState}
                         min="1"
-                        max="20"
+                        max="150"
                     />
                 </div>
             </fieldset>
@@ -127,7 +127,7 @@ export const GameForm = () => {
                         <option key="0" value="0">Please choose a game type... </option>
                         {
                             gameTypes.map(gameType => {
-                                console.log('gameType: ', gameType);
+                                // console.log('gameType: ', gameType);
                                 return <option key={gameType.id} value={gameType.id}>{gameType.type} </option>
                             })
                         }
