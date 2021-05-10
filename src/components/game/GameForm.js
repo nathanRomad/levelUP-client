@@ -14,7 +14,7 @@ export const GameForm = () => {
     */
     const [currentGame, setCurrentGame] = useState({
         difficulty: 1,
-        numberOfPlayers: 0,
+        numberOfPlayers: 1,
         title: "",
         maker: "",
         gameTypeId: 0
@@ -103,6 +103,8 @@ export const GameForm = () => {
                     <input type="number" name="numberOfPlayers" required autoFocus className="form-control"
                         value={currentGame.numberOfPlayers}
                         onChange={changeGamePlayersState}
+                        min="1"
+                        max="20"
                     />
                 </div>
             </fieldset>
@@ -111,21 +113,26 @@ export const GameForm = () => {
                     <label htmlFor="skillLevel">Skill Level: </label>
                     <input type="number" name="skillLevel" required autoFocus className="form-control"
                         value={currentGame.difficulty}
-                        onChange={changeGameSkillLevelState} 
-                        min="1" 
+                        onChange={changeGameSkillLevelState}
+                        min="1"
                         max="5"
                     />
                 </div>
             </fieldset>
-            
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="gametype">Game Type: </label>
                     <select type="number" name="gametype" required autoFocus className="form-control"
-                        // option = gameTypes.map()
-                        value={currentGame.gameTypeId}
-                        onChange={changeGameTypeState}
-                    />
+                        onChange={changeGameTypeState} value={currentGame.gameTypeId}>
+                        <option key="0" value="0">Please choose a game type... </option>
+                        {
+                            gameTypes.map(gameType => {
+                                console.log('gameType: ', gameType);
+                                return <option key={gameType.id} value={gameType.id}>{gameType.type} </option> 
+                            })
+                        }
+                    </select>
                 </div>
             </fieldset>
 
