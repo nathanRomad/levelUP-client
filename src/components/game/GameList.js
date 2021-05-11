@@ -1,10 +1,11 @@
 import React, { useContext, useEffect } from "react"
+import { useHistory } from "react-router-dom"
 import { GameContext } from "./GameProvider.js"
 
 export const GameList = (props) => {
     const { games, getGames } = useContext(GameContext)
     // console.log('games: ', games);
-
+    const history = useHistory()
 
     useEffect(() => {
         getGames()
@@ -21,6 +22,9 @@ export const GameList = (props) => {
                         <div className="game__title">{game.title} by {game.maker}</div>
                         <div className="game__players">{game.numberOfPlayers} players needed</div>
                         <div className="game__skillLevel">Skill level is {game.difficulty}</div>
+                        <button className="btn btn-3"
+                            onClick={() => history.push(`games/${game.id}/edit`)}
+                        >Edit</button>
                     </section>
                 })
             }
