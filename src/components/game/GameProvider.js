@@ -44,7 +44,6 @@ export const GameProvider = (props) => {
             },
             body: JSON.stringify(game)
         })
-            .then(getGames)
     }
 
     const editGame = (game) => {
@@ -56,7 +55,6 @@ export const GameProvider = (props) => {
             },
             body: JSON.stringify(game)
         })
-            .then(getGames)
     }
 
     return (

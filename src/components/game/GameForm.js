@@ -39,50 +39,11 @@ export const GameForm = () => {
                             })
                         })
                 }
-            }, [])
-    })
+            })
+    }, [])
 
-        /*
-            REFACTOR CHALLENGE START
-        
-            Can you refactor this code so that all property
-            state changes can be handled with a single function
-            instead of five functions that all, largely, do
-            the same thing?
-        
-            One hint: [event.target.name]
-        */
-        // const changeGameTitleState = (event) => {
-        //     const newGameState = { ...currentGame }
-        //     newGameState.title = event.target.value
-        //     setCurrentGame(newGameState)
-        // }
-
-        // const changeGameMakerState = (event) => {
-        //     const newGameState = { ...currentGame }
-        //     newGameState.maker = event.target.value
-        //     setCurrentGame(newGameState)
-        // }
-
-        // const changeGamePlayersState = (event) => {
-        //     const newGameState = { ...currentGame }
-        //     newGameState.numberOfPlayers = event.target.value
-        //     setCurrentGame(newGameState)
-        // }
-
-        // const changeGameSkillLevelState = (event) => {
-        //     const newGameState = { ...currentGame }
-        //     newGameState.difficulty = event.target.value
-        //     setCurrentGame(newGameState)
-        // }
-
-        // const changeGameTypeState = (event) => {
-        //     const newGameState = { ...currentGame }
-        //     newGameState.gameTypeId = event.target.value
-        //     setCurrentGame(newGameState)
-        // }
-
-        const handleInputChange = e => {
+    const handleInputChange = e => {
+        // debugger
         const newGameState = { ...currentGame }
         newGameState[e.target.name] = e.target.value
         if (e.target.name.includes("Id")) newGameState[e.target.name] = parseInt(e.target.value)
@@ -136,8 +97,8 @@ export const GameForm = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="gametype">Game Type: </label>
-                    <select type="number" name="gametype" required autoFocus className="form-control"
+                    <label htmlFor="gameTypeId">Game Type: </label>
+                    <select type="number" name="gameTypeId" required autoFocus className="form-control"
                         onChange={handleInputChange} value={currentGame.gameTypeId}>
                         <option key="0" value="0">Please choose a game type... </option>
                         {
